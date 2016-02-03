@@ -6,6 +6,7 @@ class Hangman
   def initialize(name, script)
     @player = Player.new(name)
     @word = select_word(script)
+    @word_array = @word.split("")
 
   end
 
