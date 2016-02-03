@@ -1,4 +1,3 @@
 require './hangman.rb'
 
-yoli = Hangman.new
-yoli.select_word('5desk.txt')
+yoli = Hangman.new('albert','5desk.txt')
