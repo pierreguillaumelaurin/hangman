@@ -1,0 +1,28 @@
+--- !ruby/object:Hangman
+name: albert
+player: !ruby/object:Player
+  name: albert
+word: osculatory
+word_array:
+- o
+- s
+- c
+- u
+- l
+- a
+- t
+- o
+- r
+- y
+answer_array:
+- _
+- s
+- _
+- _
+- _
+- _
+- _
+- _
+- _
+- _
+counter: 5
