@@ -1,16 +1,13 @@
-require './player.rb'
 require 'yaml'
 
 class Hangman
-  attr_accessor :player
 
-  def initialize(name, word, word_array, answer_array, counter=nil)
-    @name = name
-    @player = Player.new(name) #remove?
-    @word = word
-    @word_array = word_array
-    @answer_array = answer_array
-    @counter ||= 5
+  def initialize(script)
+    @script = script
+    @word = select_word(script).chomp
+    @word_array = @word.downcase.split("")
+    @answer_array = Array.new(@word.length){'_'}
+    @counter = 5
   end
 
   def info
@@ -18,6 +15,14 @@ class Hangman
   	puts "word: #{@word}"
   	puts "array: #{@word_array}"
   	puts "user_array: #{@answer_array}"
+  end
+
+  def counter
+    return @counter
+  end
+
+  def counter_substract(number)
+    @counter -= number
   end
 
   def answer?(input)
@@ -64,6 +69,11 @@ class Hangman
   		return true
   	end
   end
+
+  def select_word(script)
+      word = File.readlines(script).sample
+      return word
+    end
 
   def check_answer(input)
     if @word_array.include?(input)

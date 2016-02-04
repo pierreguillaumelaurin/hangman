@@ -1,28 +1,16 @@
 --- !ruby/object:Hangman
-name: albert
-player: !ruby/object:Player
-  name: albert
-word: osculatory
+script: 5desk.txt
+word: Union
 word_array:
-- o
-- s
-- c
 - u
-- l
-- a
-- t
+- n
+- i
 - o
-- r
-- y
+- n
 answer_array:
-- _
-- s
-- _
-- _
+- u
+- n
 - _
 - _
-- _
-- _
-- _
-- _
+- n
 counter: 5
